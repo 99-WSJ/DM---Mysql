@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dbtimer.dbupdatespring.dao.DmLedgerStockItemDao">
+
+    <resultMap id="BaseResultMap" type="com.dbtimer.dbupdatespring.entity.DMledgerStockItemEntity">
+        <id property="id" column="id" />
+        <result property="storeId" column="store_id"/>
+        <result property="stockTime" column="stock_time"/>
+        <result property="goodsName" column="goods_name"/>
+        <result property="spec" column="spec"/>
+        <result property="number" column="number"/>
+        <result property="price" column="price"/>
+        <result property="carNum" column="car_num"/>
+        <result property="storeSupplierId" column="store_supplier_id"/>
+        <result property="storeSupplierName" column="store_supplier_name"/>
+        <result property="purchaseType" column="purchase_type"/>
+        <result property="productTime" column="product_time"/>
+        <result property="qualityNumber" column="quality_number"/>
+        <result property="qualityUnit" column="quality_unit"/>
+        <result property="isPurchase" column="is_purchase"/>
+        <result property="checkPrice" column="check_price"/>
+        <result property="checkStatus" column="check_status"/>
+        <result property="description" column="description"/>
+        <result property="sortOrder" column="sort_order"/>
+        <result property="isDelete" column="is_delete"/>
+        <result property="createTime" column="create_time"/>
+        <result property="createId" column="create_id"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="updateId" column="update_id"/>
+    </resultMap>
+
+
+</mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dbtimer.dbupdatespring.dao.MysqlLedgerSupplierDao">
+
+    <resultMap id="BaseResultMap" type="com.dbtimer.dbupdatespring.entity.ledgerSupplierEntity">
+            <id property="id" column="id"/>
+            <result property="storeId" column="store_id"/>
+            <result property="supplierId" column="supplier_id"/>
+            <result property="name" column="name"/>
+            <result property="leader" column="leader"/>
+            <result property="contact" column="contact"/>
+            <result property="address" column="address"/>
+            <result property="sortOrder" column="sort_order"/>
+    </resultMap>
+
+
+</mapper>

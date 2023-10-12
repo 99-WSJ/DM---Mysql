@@ -1,0 +1,234 @@
+spring:
+
+  datasource:
+    dynamic:
+      druid:
+        filters: stat
+      primary: mysql
+      strict: false
+      datasource:
+       dm:
+         driver-class-name: dm.jdbc.driver.DmDriver
+         username: TEST      # 服务器TEST，本地TEST3
+         password: 123456789 # 服务器123456789， 本地123456
+         url: jdbc:dm://localhost:5237/schema=TEST   #服务器5237，TEST； 本地5236，TEST3
+
+
+       mysql:
+         driver-class-name: com.mysql.cj.jdbc.Driver
+         username: root
+         password: 123456
+         url: jdbc:mysql://127.0.0.1:3306/boji_03.08?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+  mapper-locations: classpath:/mapper/*.xml
+server:
+  port: 8000
+#    context-path: /springboot-demo
+
+
+mysqltable:
+  #达梦数据库表名
+  mysqlledgersellitem:
+    #MySQL数据库表名，表名后面用Map封装该表与所属的达梦表的字段对应关系，key表示达梦中的字段，value表示MySQL字段
+    ledgerSellItem: {
+      ’id': 'id',
+      'store_id': 'store_id',
+      'record_time': 'record_time',
+      'stock_item_id': 'stock_item_id',
+      'seller_id': 'seller_id',
+      'seller_name': 'seller_name',
+      'goods_name': 'goods_name',
+      'spec': 'spec',
+      'number': 'number',
+    }
+
+  mysqlledgerseller:
+    ledgerSeller: {
+      'id': 'id',
+      'store_id': 'store_id',
+      'name': 'name',
+      'contact': 'contact',
+      'address': 'address',
+
+    }
+
+
+  mysqlledgerstockitem:
+    ledgerStockItem: {
+      'id': 'id' ,
+      'store_id': 'store_id' ,
+      'stock_time': 'stock_time' ,
+      'goods_name': 'goods_name' ,
+      'spec': 'spec' ,
+      'number': 'number' ,
+      'price': 'price' ,
+      'car_num': 'car_num' ,
+      'store_supplier_id': 'store_supplier_id' ,
+      'store_supplier_name': 'store_supplier_name' ,
+      'purchase_type': 'purchase_type' ,
+      'product_time': 'product_time' ,
+      'quality_number': 'quality_number' ,
+      'quality_unit': 'quality_unit' ,
+      'is_purchase': 'is_purchase' ,
+      'check_price': 'check_price' ,
+      'check_status': 'check_status' ,
+      'description': 'description' ,
+      'sort_order': 'sort_order' ,
+      'is_delete': 'is_delete' ,
+      'create_time': 'create_time' ,
+      'create_id': 'create_id' ,
+      'update_time': 'update_time' ,
+      'update_id': 'update_id' ,
+
+    }
+
+
+  mysqlledgersupplier:
+    ledgerSupplier: {
+      ‘id': 'id' ,
+      'name': 'name' ,
+      'code': 'code' ,
+      'signage': 'signage' ,
+      'leader': 'leader' ,
+      'contact': 'contact' ,
+      'address': 'address' ,
+      'refer_is_store': 'refer_is_store' ,
+      'refer_store_id': 'refer_store_id' ,
+      'description': 'description' ,
+      'sort_order': 'sort_order' ,
+      'is_lock': 'is_lock' ,
+      'is_delete': 'is_delete' ,
+      'is_show': 'is_show' ,
+      'create_time': 'create_time' ,
+      'create_id': 'create_id' ,
+      'update_time': 'update_time' ,
+      'update_id': 'update_id' ,
+
+    }
+
+
+  mysqlledgerstoresupplier:
+    ledgerStoreSupplier: {
+      'id': 'id' ,
+      'store_id': 'store_id',
+      'supplier_id': 'supplier_id',
+      'name': 'name',
+      'leader': 'leader' ,
+      'contact': 'contact' ,
+      'address': 'address',
+      'sort_order': 'sort_order',
+
+    }
+
+  mysqlmerchantemployee:
+    merchantEmployee: {
+      'id': 'id',
+      'store_id': 'store_id',
+      'user_id': 'user_id',
+      'position_code': 'position_code',
+      'is_choose': 'is_choose',
+      'is_admin': 'is_admin',
+      'empno': 'empno',
+      'name': 'name',
+      'mobile': 'mobile',
+      'perm_value': 'perm_value',
+      'description': 'description',
+      'sort_order': 'sort_order',
+      'is_lock': 'is_lock',
+      'is_delete': 'is_delete',
+      'is_show': 'is_show',
+      'create_time': 'create_time',
+      'create_id': 'create_id',
+      'update_time': 'update_time',
+      'update_id': 'update_id',
+      'update_time_covid': 'update_time_covid',
+      'last_time_covid': 'last_time_covid',
+    }
+
+  mysqlmerchantemployeelicense:
+    merchantEmployeeLicense: {
+      ‘id': 'id'  ,
+      'employee_id': 'employee_id'  ,
+      'store_id': 'store_id'  ,
+      'user_id': 'user_id'  ,
+      'health_code': 'health_code'  ,
+      'health_expiration_time': 'health_expiration_time'  ,
+      'description': 'description'  ,
+      'sort_order': 'sort_order'  ,
+      'create_time': 'create_time'  ,
+      'create_id': 'create_id'  ,
+      'update_time': 'update_time'  ,
+      'update_id': 'update_id'  ,
+
+    }
+
+
+  mysqlmerchantstore:
+    merchantStore: {
+                       'id': 'id',
+                       'user_id': 'user_id',
+                       'region_id': 'region_id',
+                       'region_name': 'region_name',
+                       'parent_id': 'parent_id',
+                       'type': 'type',
+                       'business_type': 'business_type',
+                       'code': 'code',
+                       'name': 'name',
+                       'signage': 'signage',
+                       'contact': 'contact',
+                       'store_lv': 'store_lv',
+                       'is_child': 'is_child',
+                       'child_num': 'child_num',
+                       'longitude': 'longitude',
+                       'latitude': 'latitude',
+                       'address': 'address',
+                       'is_active': 'is_active',
+                       'is_stop': 'is_stop',
+                       'user_position': 'user_position',
+                       'demand_resource': 'demand_resource',
+                       'main_business': 'main_business',
+                       'description': 'description',
+                       'sort_order': 'sort_order',
+                       'is_lock': 'is_lock',
+                       'is_delete': 'is_delete',
+                       'is_show': 'is_show',
+                       'create_time': 'create_time',
+                       'create_id': 'create_id',
+                       'update_time': 'update_time',
+                       'update_id': 'update_id',
+                       'active_time': 'active_time',
+
+    }
+
+  mysqlmerchantstorebusinesslabel:
+    merchantStoreBusinessLabel: {
+       'id' : 'id',
+       'store_id' :'store_id',
+       'business_label': 'business_label'
+    }
+
+
+  mysqlmerchantstorelicense:
+    merchantStoreLicense: {
+      'id': 'id',
+      'store_id': 'store_id',
+      'commerce_code': 'commerce_code',
+      'commerce_name': 'commerce_name',
+      'commerce_expiration_time': 'commerce_expiration_time',
+      'commerce_is_unlimited': 'commerce_is_unlimited',
+      'food_business_code': 'food_business_code',
+      'food_business_expiration_time': 'food_business_expiration_time',
+      'food_business_is_unlimited': 'food_business_is_unlimited',
+      'description': 'description',
+      'sort_order': 'sort_order',
+      'create_time': 'create_time',
+      'create_id': 'create_id',
+      'update_time': 'update_time',
+      'update_id': 'update_id',
+    }
+
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dbtimer.dbupdatespring.dao.MysqlLedgerSellItemDao">
+
+    <resultMap id="BaseResultMap" type="com.dbtimer.dbupdatespring.entity.ledgerSellItemEntity">
+            <id property="id" column="id"/>
+            <result property="storeId" column="store_id"/>
+            <result property="recordTime" column="record_time"/>
+            <result property="stockItemId" column="stock_item_id"/>
+            <result property="sellerId" column="seller_id"/>
+            <result property="sellerName" column="seller_name"/>
+            <result property="goodsName" column="goods_name"/>
+            <result property="spec" column="spec"/>
+            <result property="number" column="number"/>
+    </resultMap>
+</mapper>
